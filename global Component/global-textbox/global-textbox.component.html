@@ -1,0 +1,15 @@
+<div [formGroup]="formGroup" class="textbox-container">
+    <div class="text-box-wrapper">
+        <ng-template [ngIf]="catagory === 'text'">
+            <input [ngClass]="{'text-box':catagory === 'text',
+        'textbox-invalid':control.dirty === true && control.invalid === true,
+    'textbox-valid':control.valid === true}" [type]="catagory" [name]="fieldName" [placeholder]="placeholder" [id]="fieldName" [formControl]="control">
+            <label [for]="fieldName" [ngClass]="{'text-disabled':disabled === true,
+        'text-lable':catagory === 'text'}" class="text-label">{{label}}
+    </label>
+        </ng-template>
+    </div>
+    <div class="error-msg-block">
+        <p class="error-msg" *ngIf="control.dirty === true && control.invalid === true">{{errorMsg}}</p>
+    </div>
+</div>

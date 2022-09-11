@@ -1,0 +1,62 @@
+.textbox-container {
+    position: relative;
+    .text-disabled {
+        color: grey;
+    }
+    .text-label {
+        position: absolute;
+        top: 47%;
+        left: 15px;
+        transform: translateY(-47%);
+        transition: all 0.3s ease-in-out;
+        color: rgb(52, 52, 52);
+    }
+    .text-box-wrapper {
+        .text-box {
+            border: 2px solid rgb(28, 28, 28);
+            border-radius: 4px;
+            padding: 8px 15px;
+            &:focus {
+                border: 2px solid blue;
+                outline: none;
+            }
+            &::placeholder {
+                color: white;
+            }
+            &:focus+.text-label {
+                top: 0;
+                font-size: 12px;
+                background: white;
+                padding: 0 8px;
+                color: blue;
+            }
+        }
+        .textbox-invalid {
+            border: 2px solid red;
+            &+.text-label {
+                top: 0;
+                font-size: 12px;
+                background: white;
+                padding: 0 8px;
+                color: red;
+            }
+        }
+        .textbox-valid {
+            border: 2px solid blue;
+            &+.text-label {
+                top: 0;
+                font-size: 12px;
+                background: white;
+                padding: 0 8px;
+                color: blue;
+            }
+        }
+    }
+    .error-msg-block {
+        .error-msg {
+            color: red;
+            padding: 8px 0;
+            font-size: 12px;
+        }
+    }
+}
